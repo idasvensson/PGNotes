@@ -1,0 +1,65 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>GNotes</title> 
+	<!-- Meta information -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+</head> 
+<body class="ui-mobile">
+
+<!-- Single Note Page -->
+<div data-role="page" id="single-note-page">
+
+	<header>	
+		
+		<h1 id="note-title" class="ui-page-title"></h1>
+		<a id="back-btn" href="index.html" data-role="button" class="ui-btn ui-btn-left">
+			<span class="ui-icon-grey ui-icon-notext ui-icon-back"></span>
+		</a>
+		<a id="edit" href="addnote.html" data-role="button" class="ui-btn ui-btn-right">
+			<span class="ui-icon-grey ui-icon-notext ui-icon-pencil"></span>
+		</a>
+
+	</header><!-- /content -->
+
+	<div data-role="top-bar" id="attach-bar">
+		<div id="attached-media"></div>
+	</div>
+
+	<div data-role="content" id="single-view">	
+
+		<div id="note">
+			
+			<p id="note-text"></p>
+
+		</div>
+
+		<div id="note-location" class="ui-icon-grey ui-icon-left ui-icon-mapmarker"></div>
+
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<!-- Scripts -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/cordova-2.7.0.js"></script>
+<script type="text/javascript" src="js/SQLitePlugin.js"></script>
+<script type="text/javascript" src="js/handlebars.min.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/dev/main.js"></script>
+<script id="note-template" type="text/x-note-template">
+	<li class="note-item">
+		<div class="note-thumb">
+			<img src="img/{{thumb}}" alt="{{title}}" />
+		</div>
+		<div class="note-content">
+			<h2 class="note-title">{{title}}</h2>
+			<p class="note-excerpt">{{excerpt}}</p>
+		</div>
+	</li>
+</script>
+</body>
+</html>
